@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PlannerService} from "../services/planner.service";
+import {Trip} from "../models/trip";
 
 @Component({
   selector: 'app-trips',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TripsComponent implements OnInit {
 
-  constructor() { }
+  tripList: Trip[] = [];
+
+  constructor(private plannerService: PlannerService) { }
 
   ngOnInit(): void {
+    this.getTrips();
   }
 
+  getTrips(): void {
+    this.plannerService.getTrips()
+      .subscribe(trips => this.tripList = trips);
+  }
 }

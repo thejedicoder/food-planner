@@ -1,1 +1,10 @@
 <h1>My Trips</h1>
+<ul>
+  <li *ngFor="let tripItem of tripList">
+    <a routerLink="/detail/{{tripItem.id}}">
+      <span class="badge">{{tripItem.id}}</span> {{tripItem.name}}
+    </a>
+<!--    <button class="delete" title="delete hero"-->
+<!--            (click)="delete(hero)">x</button>-->
+  </li>
+</ul>
