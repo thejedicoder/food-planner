@@ -1,10 +1,19 @@
 <h1>My Trips</h1>
-<ul>
-  <li *ngFor="let tripItem of tripList">
-    <a routerLink="/detail/{{tripItem.id}}">
-      <span class="badge">{{tripItem.id}}</span> {{tripItem.name}}
-    </a>
-<!--    <button class="delete" title="delete hero"-->
-<!--            (click)="delete(hero)">x</button>-->
-  </li>
+
+<br/>
+<div class="list-group trip-list">
+  <button *ngFor="let tripItem of tripList" (click)="onSelect(tripItem)"
+    type="button" class="list-group-item list-group-item-action"
+          [class.active]="tripItem === selectedTrip">{{tripItem.id}}: {{tripItem.name}}</button>
+</div>
+<br/>
+<ul class="list-group trip-list">
+  <a *ngFor="let tripItem of tripList"
+     class="list-group-item d-flex justify-content-between align-items-center"
+     routerLink="/trips/{{tripItem.id}}">
+    {{tripItem.id}}: {{tripItem.name}}
+    <span class="badge bg-primary rounded-pill">14</span>
+  </a>
 </ul>
+<br/>
+<app-trip-detail [trip]="selectedTrip"></app-trip-detail>

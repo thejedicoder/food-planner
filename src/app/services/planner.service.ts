@@ -18,12 +18,20 @@ export class PlannerService {
   constructor(private http: HttpClient) { }
 
 
-  /** GET heroes from the server */
+  /** GET trips from the server */
   getTrips(): Observable<Trip[]> {
     return this.http.get<Trip[]>(this.tripUrl)
       .pipe(
         tap(_ => console.log('fetched trips')),
         catchError(this.handleError<Trip[]>('getTrips', []))
+      );
+  }
+
+  getTripById(id: number): Observable<Trip> {
+    return this.http.get<Trip>(`${this.tripUrl}/${id}`)
+      .pipe(
+        tap(_ => console.log('fetched trips')),
+        catchError(this.handleError<Trip>(`getHero id=${id}`))
       );
   }
 

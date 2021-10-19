@@ -10,6 +10,7 @@ import {Trip} from "../models/trip";
 export class TripsComponent implements OnInit {
 
   tripList: Trip[] = [];
+  selectedTrip?: Trip;
 
   constructor(private plannerService: PlannerService) { }
 
@@ -20,5 +21,9 @@ export class TripsComponent implements OnInit {
   getTrips(): void {
     this.plannerService.getTrips()
       .subscribe(trips => this.tripList = trips);
+  }
+
+  onSelect(trip: Trip) {
+    this.selectedTrip = trip;
   }
 }

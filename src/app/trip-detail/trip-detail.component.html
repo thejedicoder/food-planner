@@ -1,0 +1,10 @@
+<div *ngIf="trip">
+
+  <h2>{{trip.name}} Details</h2>
+  <div><span>id: </span>{{trip.id}}</div>
+  <div>
+    <label for="trip-name">Trip name: </label>
+    <input id="trip-name" [(ngModel)]="trip.name" placeholder="name">
+  </div>
+
+</div>
