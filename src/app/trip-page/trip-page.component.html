@@ -1,3 +1,7 @@
+<div *ngIf="showAlert" class="alert alert-danger alert-dismissible fade show" role="alert">
+  A simple alert
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 <div *ngIf="selectedTrip">
 
   <h2>{{selectedTrip.name}} Details</h2>
@@ -6,5 +10,5 @@
     <label for="trip-name">Trip name: </label>
     <input id="trip-name" [(ngModel)]="selectedTrip.name" placeholder="name">
   </div>
-
+  <button type="button" class="btn btn-primary" (click)="saveTrip();">Save</button>
 </div>

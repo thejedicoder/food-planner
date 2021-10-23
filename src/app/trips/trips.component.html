@@ -1,12 +1,6 @@
 <h1>My Trips</h1>
 
 <br/>
-<div class="list-group trip-list">
-  <button *ngFor="let tripItem of tripList" (click)="onSelect(tripItem)"
-    type="button" class="list-group-item list-group-item-action"
-          [class.active]="tripItem === selectedTrip">{{tripItem.id}}: {{tripItem.name}}</button>
-</div>
-<br/>
 <ul class="list-group trip-list">
   <a *ngFor="let tripItem of tripList"
      class="list-group-item d-flex justify-content-between align-items-center"
@@ -16,4 +10,3 @@
   </a>
 </ul>
 <br/>
-<app-trip-detail [trip]="selectedTrip"></app-trip-detail>

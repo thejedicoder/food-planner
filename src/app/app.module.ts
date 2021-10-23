@@ -8,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from "@angular/common/http";
 import {InMemoryDataService} from "./services/in-memory-data.service";
-import { TripDetailComponent } from './trip-detail/trip-detail.component';
 import { TripPageComponent } from './trip-page/trip-page.component';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { TripPageComponent } from './trip-page/trip-page.component';
     AppComponent,
     TripsComponent,
     HomeComponent,
-    TripDetailComponent,
     TripPageComponent
   ],
   imports: [

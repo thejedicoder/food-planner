@@ -35,6 +35,22 @@ export class PlannerService {
       );
   }
 
+  addNewTrip(trip: Trip): Observable<any> {
+    return this.http.post<Trip>(`${this.tripUrl}`, trip, this.httpOptions)
+      .pipe(
+        tap(_ => console.log(`added new trip: ${trip.name}`)),
+        catchError(this.handleError<Trip>(`addNewTrip`))
+      );
+  }
+
+  updateTrip(trip: Trip): Observable<any> {
+    return this.http.put<Trip>(`${this.tripUrl}`, trip, this.httpOptions)
+      .pipe(
+        tap(_ => console.log(`updated trip: ${trip.name}`)),
+        catchError(this.handleError<Trip>(`updateTrip`))
+      );
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.
