@@ -11,6 +11,7 @@ export class TripsComponent implements OnInit {
 
   tripList: Trip[] = [];
   selectedTrip?: Trip;
+  editTrip: boolean = true;
 
   constructor(private plannerService: PlannerService) { }
 

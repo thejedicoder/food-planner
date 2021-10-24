@@ -26,7 +26,8 @@ export class InMemoryDataService implements InMemoryDbService {
   // if the array is not empty, the method below returns the highest
   // id + 1.
   genId<T extends Trip | Food>(myTable: T[]): number {
-    return myTable.length > 0 ? Math.max(...myTable.map(t => t.id)) + 1 : 11;
+    console.log(`myTable.length is: ${myTable.length}`)
+    return myTable.length > 0 ? Math.max(...myTable.map(t => t.id as number)) + 1 : 11;
   }
 
 }

@@ -1,4 +1,4 @@
 export class Trip {
-  id: number = 0
+  id?: number;
   name: string = "";
 }

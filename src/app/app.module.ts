@@ -9,13 +9,15 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from "@angular/common/http";
 import {InMemoryDataService} from "./services/in-memory-data.service";
 import { TripPageComponent } from './trip-page/trip-page.component';
+import { TripNameEditorComponent } from './trip-name-editor/trip-name-editor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TripsComponent,
     HomeComponent,
-    TripPageComponent
+    TripPageComponent,
+    TripNameEditorComponent
   ],
   imports: [
     BrowserModule,
