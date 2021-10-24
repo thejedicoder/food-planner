@@ -1,0 +1,14 @@
+<div *ngIf="tripItem" class="row mb-3">
+  <div class="col-md-4 themed-grid-col">
+    <a *ngIf="!editMode" routerLink="/trips/{{tripItem.id}}">{{tripItem.name}}</a>
+    <input *ngIf="editMode" type="text" class="form-control" [(ngModel)]="tripItem.name" placeholder="Trip Name" aria-label="Trip Name" aria-describedby="button-addon2">
+  </div>
+  <div class="col-md-4 themed-grid-col">
+    <button *ngIf="!editMode" type="button" class="btn btn-primary" (click)="toggleEdit();">Edit</button>
+    <button *ngIf="editMode" type="button" class="btn btn-primary" (click)="saveTrip();">Save</button>
+    <button *ngIf="editMode" type="button" class="btn btn-primary" (click)="toggleEdit();">Cancel</button>
+  </div>
+  <div class="col-md-4 themed-grid-col">
+
+  </div>
+</div>
